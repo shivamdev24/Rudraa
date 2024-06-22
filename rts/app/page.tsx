@@ -260,10 +260,10 @@ export default function Home() {
               </h1>
               <p className="text-lg">
                 <strong>
-                  We're a passionate team of IT architects, not just service
+                  We&apos;re a passionate team of IT architects, not just service
                   providers.
                 </strong>{" "}
-                We believe in the transformative power of technology, and we're
+                We believe in the transformative power of technology, and we&apos;re
                 dedicated to crafting innovative solutions that propel your
                 business forward.
               </p>
@@ -290,7 +290,7 @@ export default function Home() {
                   Subscribe to our newsletter.
                 </h2>
                 <p className="mt-4 text-lg leading-8 ">
-                  Don't miss out on the latest insights and resources that can
+                  Don&apos;t miss out on the latest insights and resources that can
                   help you transform your IT and achieve your business goals.
                 </p>
                 <div className="mt-6 flex max-w-md gap-x-4">
@@ -372,7 +372,7 @@ export default function Home() {
                 href="/"
                 className="bg-indigo-500 text-white hover:bg-indigo-400 text-center p-2"
               >
-                Let's Talk
+                Let&apos;s Talk
               </Link>
             </div>
             <div className="grid grid-cols-3 w-full md:w-56 gap-2">
