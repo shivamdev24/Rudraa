@@ -1,6 +1,12 @@
-
+// @ts-check
+ 
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-
-};
-
-module.exports = nextConfig;
+    images: {
+        domains: ['cdn-icons-png.freepik.com'],
+      },
+  }
+   
+  export default nextConfig
