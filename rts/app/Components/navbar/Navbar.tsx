@@ -31,7 +31,7 @@ export default function Example() {
   return (
     <Disclosure
       as="nav"
-      className="fixed top-0 z-50 w-full bg-white text-black dark:bg-black dark:text-white"
+      className="fixed top-0 z-50 w-full bg-white text-black dark:bg-black shadow dark:text-white"
     >
       {({ open }) => (
         <>
@@ -49,7 +49,7 @@ export default function Example() {
                   )}
                 </DisclosureButton>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/">
                     <Image
@@ -61,7 +61,7 @@ export default function Example() {
                     />
                   </Link>
                 </div>
-                <div className="hidden sm:ml-6 sm:block">
+                <div className="hidden sm:ml-6  sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <Link
@@ -80,7 +80,7 @@ export default function Example() {
             </div>
           </div>
 
-          <DisclosurePanel className="sm:hidden fixed top-14 right-0 z-50 bg-white dark:bg-black w-56 h-screen ">
+          <DisclosurePanel className="sm:hidden fixed top-16 pt-5 right-0 z-50 bg-white  dark:bg-black w-56 h-screen ">
             <div className="flex flex-col px-4 ">
               {navigation.map((item) => (
                 <Link
