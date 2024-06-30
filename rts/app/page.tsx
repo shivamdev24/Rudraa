@@ -7,7 +7,7 @@ import AboutUsImg from "@/public/rts.png"
 
 
 
-import { CalendarDaysIcon, HandRaisedIcon } from "@heroicons/react/24/outline";
+import { CalendarDaysIcon, HandRaisedIcon, ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
 
 
@@ -141,13 +141,13 @@ export default function Home() {
   return (
     <div className="dark:bg-black bg-white text-black dark:text-white">
       <section>
-        <div className="h-auto  md:h-[30rem] pt-20 md:pt-40 w-full    dark:bg-grid-white/[0.1] bg-grid-black/[0.1] relative flex items-center justify-center">
+        <div className="h-auto  md:h-[30rem]  md:pt-20 w-full    dark:bg-grid-white/[0.1] bg-grid-black/[0.1] relative flex items-center justify-center">
           {/* Radial gradient for the container to give a faded look */}
           <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
           <div className="w-full md:max-w-7xl px-6 z-10 py-5 sm:px-6 lg:px-8 flex flex-col gap-8 md:flex-row mx-auto md:justify-between">
             <div className="w-full md:w-1/2 flex flex-col ">
-              <p className="border-[.1px] border-gray-300 text-gray-500 w-40 mb-3 rounded-full text-center text-xs py-1">
-                Intro to Our Templates
+              <p className="border-[.1px] flex border-gray-300 dark:border-gray-800 text-gray-500 w-48 dark:bg-black bg-white gap-2 justify-center items-center mb-3 rounded-full text-center text-xs py-1">
+                <span>Intro to Our Services</span> <span className="w-6 h-6"> <ArrowLongRightIcon/> </span>
               </p>
               <h1 className="text-5xl font-bold">
                 Empowering Businesses with Reliable IT Solutions
@@ -202,7 +202,7 @@ export default function Home() {
                 href="/"
                 // href={items.path}
                 key={index}
-                className="w-full h-auto md:w-72 md:h-56  py-6  rounded flex flex-col items-center text-center justify-between duration-500 md:py-10 hover:scale-105 hover:shadow-md hover:shadow-blue-200 p-2"
+                className="w-full h-auto md:w-72 md:h-56  py-6 border dark:border-gray-800 border-gray-400 rounded flex flex-col items-center text-center justify-between duration-500 md:py-10 hover:scale-105  p-2"
               >
                 <Image
                   src={items.Icon}
@@ -260,10 +260,10 @@ export default function Home() {
               </h1>
               <p className="text-lg">
                 <strong>
-                  We're a passionate team of IT architects, not just service
-                  providers.
+                  We&apos;re a passionate team of IT architects, not just
+                  service providers.
                 </strong>{" "}
-                We believe in the transformative power of technology, and we're
+                We believe in the transformative power of technology, and we&apos;re
                 dedicated to crafting innovative solutions that propel your
                 business forward.
               </p>
@@ -290,8 +290,9 @@ export default function Home() {
                   Subscribe to our newsletter.
                 </h2>
                 <p className="mt-4 text-lg leading-8 ">
-                  Don't miss out on the latest insights and resources that can
-                  help you transform your IT and achieve your business goals.
+                  Don&apos;t miss out on the latest insights and resources that
+                  can help you transform your IT and achieve your business
+                  goals.
                 </p>
                 <div className="mt-6 flex max-w-md gap-x-4">
                   <label htmlFor="email-address" className="sr-only">
@@ -322,10 +323,8 @@ export default function Home() {
                       aria-hidden="true"
                     />
                   </div>
-                  <dt className="mt-4 font-semibold ">
-                    Weekly articles
-                  </dt>
-                  <dd className="mt-2 leading-7 text-gray-6 00">
+                  <dt className="mt-4 font-semibold ">Weekly articles</dt>
+                  <dd className="mt-2 leading-7 text-gray-400">
                     Keep your finger on the pulse of the ever-evolving IT
                     landscape with our curated articles and expert commentary.
                   </dd>
@@ -338,7 +337,7 @@ export default function Home() {
                     />
                   </div>
                   <dt className="mt-4 font-semibold ">No spam</dt>
-                  <dd className="mt-2 leading-7 text-gray-600">
+                  <dd className="mt-2 leading-7 text-gray-400">
                     We value your privacy and will never share your email
                     address with third parties.
                   </dd>

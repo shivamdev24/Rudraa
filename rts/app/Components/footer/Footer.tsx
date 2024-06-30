@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from "../Logo"
 
 function Footer() {
   return (
@@ -6,7 +7,9 @@ function Footer() {
       <div className="w-full md:w-[80%] md:mx-auto ">
         <div className="flex flex-col md:flex-row md:justify-around gap-3 md:gap-10">
           <div className="w-full md:w-[30%]">
-            <h4 className="font-bold text-2xl">YourCompany.</h4>
+            <div>
+              <Logo/>
+            </div>
             <div className="flex flex-col">
               <p className="text-sm">
                 RudraaTechSolution is a startup company based in India,
