@@ -1,33 +1,48 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-
 import { usePathname } from "next/navigation";
-import Link from 'next/link'
-import Image from "next/image";
-import Logo from "../../favicon.ico"
-
-
+import Link from "next/link";
+import Logo from "../Logo"
 
 const navigation = [
-  { name: "About us", href: "about"},
-  { name: "Services", href: "service" },
-  { name: "Contact", href: "contact" },
+  { name: "About us", href: "/about" },
+  { name: "Services", href: "/service" },
+  { name: "Contact", href: "/contact" },
 ];
 
-
-
 export default function Example() {
-   const pathname = usePathname();
+  const pathname = usePathname();
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const handleThemeChange = () => {
+      const darkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setTheme(darkMode ? "dark" : "light");
+    };
+
+    handleThemeChange(); // Check the theme on initial load
+
+    // Listen for changes in the theme
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addListener(handleThemeChange);
+
+    return () => {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeListener(handleThemeChange);
+    };
+  }, []);
+
   return (
     <Disclosure
       as="nav"
@@ -35,11 +50,11 @@ export default function Example() {
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 py-3">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2  ">
+                {/* Mobile menu button */}
+                <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -49,27 +64,19 @@ export default function Example() {
                   )}
                 </DisclosureButton>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+              <div className="flex flex-1 items-center justify-center sm:items-center sm:justify-between">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link href="/">
-                    <Image
-                      className="h-8 w-auto"
-                      src={Logo}
-                      alt="Your Company"
-                      width={50}
-                      height={50}
-                    />
-                  </Link>
+                 <Logo/>
                 </div>
-                <div className="hidden sm:ml-6  sm:block">
+                <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         className={`link ${
-                          pathname === "/" ? "active" : ""
-                        } hover:text-blue-500`}
+                          pathname === item.href ? "active" : ""
+                        } hover:text-blue-500 font-medium text-lg`}
                       >
                         {item.name}
                       </Link>
@@ -80,15 +87,15 @@ export default function Example() {
             </div>
           </div>
 
-          <DisclosurePanel className="sm:hidden fixed top-16 pt-5 right-0 z-50 bg-white  dark:bg-black w-56 h-screen ">
-            <div className="flex flex-col px-4 ">
+          <DisclosurePanel className="sm:hidden fixed top-16 pt-5 right-0 z-50 bg-white dark:bg-black w-56 h-screen">
+            <div className="flex flex-col px-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={`link ${
-                    pathname === "/" ? "active" : ""
-                  } py-2 px-4 hover:bg-blue-100 hover:text-blue-600 rounded`}
+                    pathname === item.href ? "active" : ""
+                  } py-2 px-4 hover:bg-blue-100 hover:text-blue-600 rounded font-medium`}
                 >
                   {item.name}
                 </Link>
